@@ -3,7 +3,7 @@
   +size(24rem, 100%)
   background-color: $color-primary-500
   padding: 4rem 1rem
-  border-left: 4rem solid $color-dark-400
+  border-left: 4rem solid $color-dark-500
 
 .menu-item
   +size(100%, 3rem)
@@ -13,7 +13,7 @@
   margin-bottom: 0.5rem
 
   &:link
-    background-color: $color-dark-400
+    background-color: $color-dark-500
     color: $color-primary-500
 
   &:visited
@@ -22,6 +22,7 @@
   &:hover,
   &:active
     color: $color-primary-500
+    background-image: linear-gradient(to right, $color-primary-900, $color-dark-500)
 
     &::before
       background-color: $color-primary-500
@@ -31,5 +32,5 @@
     position: absolute
     left: -2.5rem
     +size(1rem, 100%)
-    background-color: $color-dark-400
+    background-color: $color-dark-500
     transition: background-color 0.15s ease-in-out

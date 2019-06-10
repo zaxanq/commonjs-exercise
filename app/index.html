@@ -1,27 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link href="assets/styles/css/style.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <link href="assets/styles/css/style.css" rel="stylesheet">
 </head>
 <body>
 <div class="wrapper">
-    <header class="main-header"></header>
-    <main class="main-content">
-        <aside class="navigation">
-            <nav class="menu-container"></nav>
-            <script id="test" type="text/x-handlebars-template">
-                {{#each items}}
-                    <a href="#{{url}}" class="menu-item">{{name}}</a>
-                {{/each}}
-            </script>
-        </aside>
-        <aside class="content">
-            <section class="content-title"></section>
-            <section class="content-message"></section>
-        </aside>
-    </main>
+  <header class="main-header"></header>
+  <main class="main-content">
+    <aside class="navigation">
+      <nav class="menu-container"></nav>
+      <script id="menu-template" type="text/x-handlebars-template">
+        {{#each items}}
+        <a href="#{{url}}" class="menu-item">{{name}}</a>
+        {{/each}}
+      </script>
+    </aside>
+    <aside class="content"></aside>
+    <script id="content-template" type="text/x-handlebars-template">
+      {{#each contentPages}}
+      <section id="{{id}}" class="content__page content__page--hidden">
+        <article class="content-title">
+          {{title}}
+        </article>
+        <article class="content-message">
+          {{message}}
+        </article>
+      </section>
+      {{/each}}
+    </script>
+  </main>
 </div>
 
 <script data-main="js/main.js" id="common-js" src="js/common.js"></script>

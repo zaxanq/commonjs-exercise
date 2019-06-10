@@ -1,4 +1,28 @@
 .content
+  position: relative
   +flex-fdc(flex-start, center)
   flex: 1
   height: 100%
+
+.content__page
+  position: absolute
+  +flex-fdc(flex-start, flex-start)
+  +size(72rem, 64rem)
+  padding: 4rem 0
+
+  &--hidden
+    opacity: 0
+    pointer-events: none
+
+.content-title
+  +flex(center, center)
+  +size(100%, 6.5rem)
+  background-color: $color-dark-400
+  font-size: 2rem
+  font-weight: 100
+
+.content-message
+  flex: 1
+  width: 100%
+  padding: 2rem 4rem
+  background-color: $color-dark-500

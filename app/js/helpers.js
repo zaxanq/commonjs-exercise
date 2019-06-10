@@ -8,11 +8,11 @@ class Helpers {
         return document.getElementById(idName);
     }
 
-    addClass(className, element) {
+    addClass(element, className) {
         element.classList.add(className);
     }
 
-    removeClass(className, element) {
+    removeClass(element, className) {
         element.classList.remove(className);
     }
 }

@@ -16,15 +16,13 @@
 
 class App {
     init() {
-        this.hbs = require('./handlebars');
-
         this.helpers = require('./helpers');
+
+        this.menu = require('./components/menu');
+        this.menu.init();
 
         this.wrapper = require('./components/wrapper');
         this.wrapper.init();
-
-        this.hbsScripts = require('./handlebars-dance');
-        this.hbsScripts.renderMenu();
     }
 }
 
