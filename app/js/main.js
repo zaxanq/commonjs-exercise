@@ -20,12 +20,11 @@ class App {
 
         this.helpers = require('./helpers');
 
-
         this.wrapper = require('./components/wrapper');
         this.wrapper.init();
 
         this.hbsScripts = require('./handlebars-dance');
-        this.hbsScripts.renderPage();
+        this.hbsScripts.renderMenu();
     }
 }
 

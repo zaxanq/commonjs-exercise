@@ -2,13 +2,29 @@ const Helpers = require('./helpers');
 const Handlebars = require('./handlebars');
 
 class HbsDance {
-    renderPage() {
-
-        let templateHTML = Helpers.id('test').innerHTML;
+    init(source, data, target) {
+        let templateHTML = source.innerHTML;
         let compiled = Handlebars.compile(templateHTML);
-        console.log(compiled);
-        Helpers.id('test-container').innerHTML = compiled({name: 'czesc'});
+        target.innerHTML = compiled(data);
+    }
 
+    renderMenu() {
+        this.Data = {
+            items: [
+                {name: 'Home'},
+                {name: 'About me'},
+                {name: 'Contact'}
+            ]
+        };
+        this.createURLs();
+
+        this.init(Helpers.id('test'), this.Data, Helpers.class('menu-container'));
+    }
+
+    createURLs() {
+        this.Data.items.forEach((item) => {
+            item.url = item.name.toLowerCase().split(' ').join('-');
+        });
     }
 }
 

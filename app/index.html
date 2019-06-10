@@ -3,13 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="assets/styles/css/style.css">
+    <link href="assets/styles/css/style.css" rel="stylesheet">
 </head>
 <body>
-    <div id="test-container"></div>
-    <script type="text/x-handlebars-template" id="test" src="templates/test.hbs">
-        <p>{{name}}</p>
-    </script>
-    <script id="common-js" data-main="js/main.js" src="js/common.js"></script>
+<div class="wrapper">
+    <header class="main-header"></header>
+    <main class="main-content">
+        <aside class="navigation">
+            <nav class="menu-container"></nav>
+            <script id="test" type="text/x-handlebars-template">
+                {{#each items}}
+                    <a href="#{{url}}" class="menu-item">{{name}}</a>
+                {{/each}}
+            </script>
+        </aside>
+        <aside class="content"></aside>
+    </main>
+</div>
+
+<script data-main="js/main.js" id="common-js" src="js/common.js"></script>
 </body>
 </html>
