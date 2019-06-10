@@ -16,8 +16,16 @@
 
 class App {
     init() {
+        this.hbs = require('./handlebars');
+
+        this.helpers = require('./helpers');
+
+
         this.wrapper = require('./components/wrapper');
         this.wrapper.init();
+
+        this.hbsScripts = require('./handlebars-dance');
+        this.hbsScripts.renderPage();
     }
 }
 
