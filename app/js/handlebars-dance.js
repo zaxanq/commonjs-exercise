@@ -12,8 +12,13 @@ class HbsDance {
         this.Data = {
             items: [
                 {name: 'Home'},
-                {name: 'About me'},
-                {name: 'Contact'}
+                {name: 'Reason why'},
+                {name: 'Our mission'},
+                {name: 'Our clients'},
+                {name: 'Ideology'},
+                {name: 'Our members'},
+                {name: 'Technologies'},
+                {name: 'Contact us'},
             ]
         };
         this.createURLs();

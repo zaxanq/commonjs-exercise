@@ -1,14 +1,15 @@
 .menu-container
   +flex-fdc(flex-start, flex-start)
-  +size(20rem, 100%)
+  +size(24rem, 100%)
   background-color: $color-primary-500
-  padding: 4rem 2rem
-  border-left: 2rem solid $color-dark-400
+  padding: 4rem 1rem
+  border-left: 4rem solid $color-dark-400
 
 .menu-item
-  width: 100%
+  +size(100%, 3rem)
+  position: relative
   +flex(flex-start, center)
-  padding: 0.5rem 1rem
+  padding: 0 1rem
   margin-bottom: 0.5rem
 
   &:link
@@ -21,3 +22,14 @@
   &:hover,
   &:active
     color: $color-primary-500
+
+    &::before
+      background-color: $color-primary-500
+
+  &::before
+    content: ''
+    position: absolute
+    left: -2.5rem
+    +size(1rem, 100%)
+    background-color: $color-dark-400
+    transition: background-color 0.15s ease-in-out

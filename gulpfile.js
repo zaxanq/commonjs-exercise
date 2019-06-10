@@ -26,6 +26,5 @@ gulp.task('watch', ['browserSync', 'sass'], () => {
     gulp.watch('app/assets/styles/**/*.sass', ['sass']);
     gulp.watch('app/*.html', browserSync.reload);
     gulp.watch('app/*.hbs', browserSync.reload);
-    gulp.watch('app/js/*.js', browserSync.reload);
-    gulp.watch('app/js/*/*.js', browserSync.reload);
+    gulp.watch('app/**/*.js', browserSync.reload);
 });
