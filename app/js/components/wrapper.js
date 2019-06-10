@@ -21,8 +21,9 @@ class Wrapper {
         this.addIds();
         Hbs.render(Helpers.id('content-template'), this.Data, Helpers.class('content'));
 
-        this.setPage('home');
+        this.setPage(window.location.hash.slice(1));
         this.addEventListeners();
+
     }
 
     addIds() {
@@ -48,6 +49,7 @@ class Wrapper {
     }
 
     setPage(id) {
+        if (id === '') id = 'home';
         this.Pages.forEach((page) => {
             if (page.idName === id) {
                 page.hidden = false;
@@ -77,7 +79,13 @@ class Wrapper {
                     this.setPage(window.location.hash.slice(1));
                 }, 0);
             });
-        })
+        });
+
+        window.addEventListener('hashchange', () => {
+            setTimeout(() => {
+                this.setPage(window.location.hash.slice(1));
+            }, 0);
+        });
     }
 
 }
