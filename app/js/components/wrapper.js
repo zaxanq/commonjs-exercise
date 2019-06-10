@@ -22,6 +22,7 @@ class Wrapper {
         Hbs.render(Helpers.id('content-template'), this.Data, Helpers.class('content'));
 
         this.setPage('home');
+        this.addEventListeners();
     }
 
     addIds() {
@@ -50,6 +51,8 @@ class Wrapper {
         this.Pages.forEach((page) => {
             if (page.idName === id) {
                 page.hidden = false;
+            } else {
+                page.hidden = true;
             }
         });
 
@@ -59,12 +62,22 @@ class Wrapper {
     updatePages() {
         let pageHidden = 'content__page--hidden';
         this.Pages.forEach((page) => {
-            if (page.hidden) {
-                Helpers.addClass(Helpers.id(page.idName), pageHidden);
-            } else {
+            if (!page.hidden) {
                 Helpers.removeClass(Helpers.id(page.idName), pageHidden);
+            } else {
+                Helpers.addClass(Helpers.id(page.idName), pageHidden);
             }
         });
+    }
+
+    addEventListeners() {
+        [...Helpers.class('menu-item', false)].map((item) => {
+            item.addEventListener('click', () => {
+                setTimeout(() => {
+                    this.setPage(window.location.hash.slice(1));
+                }, 0);
+            });
+        })
     }
 
 }
