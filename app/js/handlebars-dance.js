@@ -16,7 +16,10 @@ class HbsDance {
                 {name: 'Our mission'},
                 {name: 'Our clients'},
                 {name: 'Ideology'},
+                {name: 'Pricing'},
+                {name: 'Workflow'},
                 {name: 'Our members'},
+                {name: 'Competences'},
                 {name: 'Technologies'},
                 {name: 'Contact us'},
             ]
